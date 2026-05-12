@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Supertonic2 TTS Wyoming Server for Home Assistant
+Supertonic3 TTS Wyoming Server for Home Assistant
 Provides text-to-speech via Wyoming protocol for automatic discovery
 """
 
@@ -174,7 +174,7 @@ SUPPORTED_VOICES = {
 
 
 class SupertonicEventHandler(AsyncEventHandler):
-    """Handle Wyoming protocol events for Supertonic2 TTS"""
+    """Handle Wyoming protocol events for Supertonic3 TTS"""
 
     def __init__(
         self,
@@ -307,7 +307,7 @@ class SupertonicEventHandler(AsyncEventHandler):
 
 async def main():
     """Main entry point"""
-    parser = argparse.ArgumentParser(description="Supertonic2 TTS Wyoming Server")
+    parser = argparse.ArgumentParser(description="Supertonic3 TTS Wyoming Server")
     parser.add_argument(
         "--uri",
         default="tcp://0.0.0.0:10300",
@@ -321,7 +321,7 @@ async def main():
     parser.add_argument(
         "--models-dir",
         default="/opt/supertonic/models",
-        help="Directory containing Supertonic2 models",
+        help="Directory containing Supertonic3 models",
     )
     parser.add_argument(
         "--zeroconf",
@@ -342,7 +342,7 @@ async def main():
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
-    _LOGGER.info("=== Supertonic2 TTS Wyoming Server Starting ===")
+    _LOGGER.info("=== Supertonic3 TTS Wyoming Server Starting ===")
 
     # Load configuration
     config = {}
@@ -405,8 +405,8 @@ async def main():
     wyoming_info = Info(
         tts=[
             TtsProgram(
-                name="supertonic2",
-                description="Supertonic2 - Ultra-fast, on-device multilingual TTS",
+                name="supertonic3",
+                description="Supertonic3 - Ultra-fast, on-device multilingual TTS",
                 attribution=Attribution(
                     name="Supertone Inc.",
                     url="https://github.com/supertone-inc/supertonic",
@@ -477,7 +477,7 @@ async def main():
                     local_ip = "0.0.0.0"
                     local_ip_bytes = sock.inet_aton(local_ip)
 
-                service_name = "Supertonic2 TTS._wyoming._tcp.local."
+                service_name = "Supertonic3 TTS._wyoming._tcp.local."
                 service_type = "_wyoming._tcp.local."
 
                 service_info = ServiceInfo(
@@ -486,8 +486,8 @@ async def main():
                     addresses=[local_ip_bytes],
                     port=port,
                     properties={
-                        "name": "Supertonic2 TTS",
-                        "program": "supertonic2",
+                        "name": "Supertonic3 TTS",
+                        "program": "supertonic3",
                         "domain": "tts",
                     },
                     server=f"{hostname}.local.",
@@ -498,7 +498,7 @@ async def main():
 
                 _LOGGER.info("Wyoming service registered on mDNS:")
                 _LOGGER.info("  - Service: %s", service_type)
-                _LOGGER.info("  - Name: Supertonic2 TTS")
+                _LOGGER.info("  - Name: Supertonic3 TTS")
                 _LOGGER.info("  - Host: %s (%s.local)", local_ip, hostname)
                 _LOGGER.info("  - Port: %d", port)
                 _LOGGER.info("Zeroconf/mDNS: ENABLED ✓")
