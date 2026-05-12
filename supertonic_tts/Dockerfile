@@ -39,9 +39,9 @@ RUN pip install --no-cache-dir \
 # Clone Supertonic repository (for helper code)
 RUN git clone --depth 1 https://github.com/supertone-inc/supertonic.git /opt/supertonic
 
-# Initialize Git LFS and download Supertonic2 models
+# Initialize Git LFS and download Supertonic3 models
 RUN git lfs install && \
-    git clone https://huggingface.co/Supertone/supertonic-2 /opt/supertonic/models
+    git clone https://huggingface.co/Supertone/supertonic-3 /opt/supertonic/models
 
 # Clean up git files to save space (keep only models)
 RUN cd /opt/supertonic/models && \
