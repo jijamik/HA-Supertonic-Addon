@@ -60,7 +60,7 @@ COPY rootfs /
 
 # Labels
 LABEL \
-    io.hass.name="Supertonic2 TTS" \
+    io.hass.name="Supertonic3 TTS" \
     io.hass.description="Ultra-fast, on-device multilingual text-to-speech" \
     io.hass.type="addon" \
     io.hass.version="1.0.0"
