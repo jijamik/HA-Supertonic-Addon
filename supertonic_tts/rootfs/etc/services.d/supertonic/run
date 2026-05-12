@@ -1,9 +1,9 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Start the Supertonic2 TTS Wyoming Server
+# Start the Supertonic3 TTS Wyoming Server
 # ==============================================================================
 
-bashio::log.info "Starting Supertonic2 TTS Wyoming Server..."
+bashio::log.info "Starting Supertonic3 TTS Wyoming Server..."
 
 # Get configuration
 DEFAULT_LANG=$(bashio::config 'default_language')
